@@ -1,0 +1,24 @@
+{
+    "preguntas": [
+        {
+            "id": 1,
+            "texto": "¿Cuál es la capital de España?",
+            "respuestas": [
+              {"texto": "Madrid", "correcta": true, "numero": 1},
+              {"texto": "Barcelona", "correcta": false, "numero": 2},
+              {"texto": "Valencia", "correcta": false, "numero": 3},
+              {"texto": "Sevilla", "correcta": false, "numero": 4}
+            ]
+          },
+          {
+            "id": 2,
+            "texto": "¿Cuál es la capital de Portugal?",
+            "respuestas": [
+              {"texto": "Madrid", "correcta": true, "numero": 1},
+              {"texto": "Barcelona", "correcta": false, "numero": 2},
+              {"texto": "Valencia", "correcta": false, "numero": 3},
+              {"texto": "Sevilla", "correcta": false, "numero": 4}
+            ]
+          }
+    ]
+  }
