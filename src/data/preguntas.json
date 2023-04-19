@@ -14,9 +14,9 @@
             "id": 2,
             "texto": "¿Cuál es la capital de Portugal?",
             "respuestas": [
-              {"texto": "Madrid", "correcta": true, "numero": 1},
+              {"texto": "Praga", "correcta": false, "numero": 1},
               {"texto": "Barcelona", "correcta": false, "numero": 2},
-              {"texto": "Valencia", "correcta": false, "numero": 3},
+              {"texto": "Lisboa", "correcta": true, "numero": 3},
               {"texto": "Sevilla", "correcta": false, "numero": 4}
             ]
           }
