@@ -6,7 +6,7 @@ function AnadirPregunta() {
 
   const [dataPreguntas, setDataPreguntas] = useState(preguntas.preguntas);
   const [pestanha, setPestanha] = useState(0);
-  let ids = 0;
+  let ids = 3;
 
   const[textoPregunta, setTextoPregunta] = useState("");
   const[opcion1, setOpcion1] = useState("");
@@ -28,12 +28,12 @@ function AnadirPregunta() {
     };
     setDataPreguntas([...dataPreguntas, nuevaPregunta]);
     ids += 1;
-    console.log(dataPreguntas);
   }
   
 
   return (
-    <div className="">
+    <div className="w-screen h-screen bg-cover bg-no-repeat"
+    style={{ backgroundImage: "url('https://s1.ppllstatics.com/lasprovincias/www/multimedia/201912/07/media/cortadas/carlos-sobera-kHSD-U90899736077zr-1248x770@Las%20Provincias.jpg')" }}>
 
       {
         pestanha === 0
