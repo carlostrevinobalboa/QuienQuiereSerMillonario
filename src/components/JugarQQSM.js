@@ -3,7 +3,7 @@ import Resultados from './Resultados';
 
 function JugarQQSM({preguntas}) {
 
-    console.log(preguntas) ;
+    console.log(preguntas.preguntas) ;
     const[index, setIndex] = useState(0);
     const[controllerSiguientePregunta, setControllerSiguientePregunta] = useState(false);
     const[preguntaMarcada, setPreguntaMarcada] = useState(-1);
@@ -22,7 +22,7 @@ function JugarQQSM({preguntas}) {
         setIndex(auxIndex);
         setPreguntaMarcada(-1); setPreguntaCorrecta(false); setPreguntaRespondida(false); setHandlePreguntaMarcada(true);
 
-        if(index === (preguntas.length-2)){
+        if(index === (preguntas.preguntas.length-2)){
             setControllerSiguientePregunta(true);
         }
 
@@ -31,18 +31,16 @@ function JugarQQSM({preguntas}) {
     function comprobarPregunta(id){   
         setPreguntaRespondida(true);    
         let respuestaCorrecta = -1; 
-        for(let i=0; i<preguntas[index].respuestas.length; i++){
-            if(preguntas[index].respuestas[i].correcta === true)
-                respuestaCorrecta = preguntas[index].respuestas[i].numero;
+        for(let i=0; i<preguntas.preguntas[index].respuestas.length; i++){
+            if(preguntas.preguntas[index].respuestas[i].correcta === true)
+                respuestaCorrecta = preguntas.preguntas[index].respuestas[i].numero;
         }       
         if(preguntaMarcada === respuestaCorrecta){
             setPreguntaCorrecta(true);
             setPreguntaAcertada([...preguntaAcertada, id]);
-            console.log("-------");
             console.log(preguntaAcertada);
         }else{
             setPreguntaFallada([...preguntaFallada, id]);
-            console.log("++++++");
             console.log(preguntaFallada);
         }
     }
@@ -61,10 +59,13 @@ function JugarQQSM({preguntas}) {
         {
             terminarJuego === false
             ?
-                <div className='w-screen h-screen bg-cover bg-no-repeat'>
-                    {console.log(preguntas)}
-                    <p> {preguntas[index].texto}</p>
-                    {preguntas[index].respuestas.map((respuesta) => (
+                <div className='flex flex-col align-middle justify-center items-center p-2'>
+                    
+                    <div className='bg-slate-500 w-3/4 border-2 rounded-md flex align-middle justify-center mb-2 p-2'>
+                        <p> {preguntas.preguntas[index].texto}</p>
+                    </div>
+
+                    {preguntas.preguntas[index].respuestas.map((respuesta) => (
                     (
                         respuesta.numero === preguntaMarcada
                         ?
@@ -73,43 +74,54 @@ function JugarQQSM({preguntas}) {
                             ?
                                 preguntaCorrecta === true
                                 ?
-                                <label className="px-3 py-1 rounded-lg font-bold text-black bg-green-400" >
-                                    <input className='appearance-none' checked={false} type='radio' name={preguntas[index].id} onChange={() => checkPreguntaMarcada(respuesta.numero)} value={respuesta.texto} /> {respuesta.texto}
-                                </label>
+                                <div className='w-1/3 bg-green-400 rounded-3xl border-2 border-white flex flex-row align-middle justify-center items-center p-2'>
+                                    <label className="w-full mt-1 m-1 ml-2" >
+                                        <input className='appearance-none' checked={false} type='radio' name={preguntas.preguntas[index].id} onChange={() => checkPreguntaMarcada(respuesta.numero)} value={respuesta.texto} /> {respuesta.texto}
+                                    </label>
+                                </div>
                                 :
-                                <label className="px-3 py-1 rounded-lg font-bold text-black bg-red-600" >
-                                    <input className='appearance-none' checked={false} type='radio' name={preguntas[index].id} onChange={() => checkPreguntaMarcada(respuesta.numero)} value={respuesta.texto} /> {respuesta.texto}
-                                </label>
+                                <div className='w-1/3 bg-red-600 rounded-3xl border-2 border-white flex flex-row align-middle justify-center items-center p-2'>
+                                    <label className="w-full mt-1 m-1 ml-2 " >
+                                        <input className='appearance-none' checked={false} type='radio' name={preguntas.preguntas[index].id} onChange={() => checkPreguntaMarcada(respuesta.numero)} value={respuesta.texto} /> {respuesta.texto}
+                                    </label>
+                                </div>
                             :
-                            <label className="px-3 py-1 rounded-lg font-bold text-black bg-orange-400" >
-                                <input className='appearance-none' type='radio' name={preguntas[index].id} onChange={() => checkPreguntaMarcada(respuesta.numero)} value={respuesta.texto} /> {respuesta.texto}
-                            </label>
+                            <div className='w-1/3 bg-orange-400 rounded-3xl border-2 border-white flex flex-row align-middle justify-center items-center p-2'>
+                                <label className="w-full mt-1 m-1 ml-2" >
+                                    <input className='appearance-none' type='radio' name={preguntas.preguntas[index].id} onChange={() => checkPreguntaMarcada(respuesta.numero)} value={respuesta.texto} /> {respuesta.texto}
+                                </label>
+                            </div>
                         )
                         :
-                            <label className="px-3 py-1 rounded-lg font-bold text-black bg-slate-400" >
-                                <input className='appearance-none' type='radio' disabled={preguntaRespondida} name={preguntas[index].id} onChange={() => checkPreguntaMarcada(respuesta.numero)} value={respuesta.texto} /> {respuesta.texto}
-                            </label>
+                            <div className='w-1/3 bg-slate-400 rounded-3xl border-2 border-white flex flex-row align-middle justify-center items-center p-2'>
+                                <label className="w-full mt-1 m-1 ml-2 " > a)
+                                    <input className='appearance-none' type='radio' disabled={preguntaRespondida} name={preguntas.preguntas[index].id} onChange={() => checkPreguntaMarcada(respuesta.numero)} value={respuesta.texto} /> {respuesta.texto}
+                                </label>
+                            </div>
                     )
 
                     ))}
 
-                    <button className="mr-2 border p-1 " disabled={handlePreguntaMarcada} onClick={() => comprobarPregunta(preguntas[index].id)}>Comprobar pregunta</button>
+                    <div className='flex flex-row align-middle justify-center mt-4 w-3/4 '>
 
-                    {
-                        controllerSiguientePregunta === true
-                        ?
-                            null
-                        :
-                            <button className="mr-2 border p-1 " onClick={() => handleSiguientePregunta()}>Siguiente pregunta</button>
-                    }
+                        <button className="bg-purple-400 w-1/6 border-2 rounded-md p-2 mt-2 mb-2 " disabled={handlePreguntaMarcada} onClick={() => comprobarPregunta(preguntas.preguntas[index].id)}>Comprobar pregunta</button>
 
-                    {
-                        controllerSiguientePregunta === true
-                        ?
-                            <button className="mr-2 border p-1 " onClick={() => handleTerminarJuego()}>Terminar el juego2</button>
-                        :
-                            null
-                    }
+                        {
+                            controllerSiguientePregunta === true
+                            ?
+                                null
+                            :
+                                <button className="bg-purple-400 w-auto border-2 rounded-md p-2 mt-2 mb-2 " onClick={() => handleSiguientePregunta()}>Siguiente pregunta</button>
+                        }
+
+                        {
+                            controllerSiguientePregunta === true
+                            ?
+                                <button className="bg-purple-400 w-auto border-2 rounded-md p-2 mt-2 mb-2 " onClick={() => handleTerminarJuego()}>Terminar el juego</button>
+                            :
+                                null
+                        }
+                    </div>
 
                 </div>
             :
@@ -123,3 +135,4 @@ function JugarQQSM({preguntas}) {
 }
 
 export default JugarQQSM;
+//

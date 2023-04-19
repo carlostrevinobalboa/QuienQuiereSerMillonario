@@ -5,7 +5,11 @@ function Resultados({preguntasCorrectas, preguntasFalladas}) {
     console.log(preguntasCorrectas);
     console.log(preguntasFalladas);
     return(
-        <p>juego terminado</p>
+        
+        <div className='flex flex-col align-middle items-center justify-start '>
+            <p>juego terminado</p>
+        </div>
+        
     )
     
 
