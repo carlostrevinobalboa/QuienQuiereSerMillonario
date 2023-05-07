@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import JugarQQSM from "../components/JugarQQSM";
 import swal from 'sweetalert2'
 
 function AnadirPregunta() {
+
+  const [controllerNumeroPreguntas, setControllerNumeroPreguntas] = useState(false);
 
   let myData = {};
 
@@ -19,6 +21,18 @@ function AnadirPregunta() {
   }else{
     controller = true;
   }
+
+  useEffect(() => {
+    
+    if(myData && myData.preguntas){
+      if(myData.preguntas.length === 15){
+        setControllerNumeroPreguntas(true);
+      }
+    }
+
+    
+  }, [myData]);
+
 
   const [pestanha, setPestanha] = useState(0);
 
@@ -73,7 +87,8 @@ function AnadirPregunta() {
           {"texto": opcion2, "correcta": correcta2, numero: 2},
           {"texto": opcion3, "correcta": correcta3, numero: 3},
           {"texto": opcion4, "correcta": correcta4, numero: 4}
-        ]
+        ],
+        resultado: null,
       };
       if (!myData.preguntas) {
         myData.preguntas = [];
@@ -88,12 +103,21 @@ function AnadirPregunta() {
       setOpcion2("");
       setOpcion3("");
       setOpcion4("");
+      setCorrecta1(false);
+      setCorrecta2(false);
+      setCorrecta3(false);
+      setCorrecta4(false);
       setTextoPregunta("");
+
+
+
     }else if(controllerDatosPreguntas === true){
       swal.fire("Error, completa todos los datos de las preguntas", "", "warning");
     }else if(controllerOpcionesMarcadas === true){
       swal.fire("Error, marca la opción correcta", "", "warning");
     }
+
+
 
   }
 
@@ -114,10 +138,10 @@ function AnadirPregunta() {
       controller = true;
     }
 
-    if(controller === false && controllerDatosPreguntas === false && controllerOpcionesMarcadas === false && myData.preguntas.length > 1){
+    if(controller === false && controllerDatosPreguntas === false && controllerOpcionesMarcadas === false && myData.preguntas.length === 15){
       setPestanha(1);
     }else{
-      swal.fire("Debes añadir al menos dos preguntas para poder jugar","","info");
+      swal.fire("Debes añadir 15 preguntas para poder jugar","","info");
     }
 
   }
@@ -130,9 +154,14 @@ function AnadirPregunta() {
         pestanha === 0
         ?
         <div className='flex flex-col  align-middle justify-center items-center p-2'>
+          {
+            myData.preguntas && 
+            <p className='bg-black text-white'>Número de preguntas: {myData.preguntas.length}</p>
+          }
+          
 
           <div className='bg-slate-500 w-3/4 border-2 rounded-md flex flex-row align-middle justify-center mb-2 p-2'>
-            <label className='mt-1' htmlFor="Titulo" >Nombre:</label>
+            <label className='mt-1' htmlFor="Titulo" >Titulo:</label>
               <input className="w-2/4 mt-1 m-1 ml-2 border rounded-md"  id="Titulo" onChange={(e) => setTextoPregunta(e.target.value)} value={textoPregunta} ></input>
           </div>
 
@@ -166,7 +195,7 @@ function AnadirPregunta() {
             </div>
           </div>
 
-          <button className='bg-purple-400 w-1/6 border-2 rounded-md p-2 mt-2 mb-2' onClick={() => crearPregunta()}>añadir pregunta</button>
+          <button className='bg-purple-400 w-1/6 border-2 rounded-md p-2 mt-2 mb-2' disabled={controllerNumeroPreguntas} onClick={() => crearPregunta()}>añadir pregunta</button>
           <button className='bg-purple-400 w-1/6 border-2 rounded-md p-2 mt-2 mb-2' onClick={() => handleJugar()}>Jugar</button>
           <button className='bg-purple-400 w-1/6 border-2 rounded-md p-2 mt-2 mb-2' onClick={() => handleEliminarPregunta()}>Eliminar preguntas</button>
 

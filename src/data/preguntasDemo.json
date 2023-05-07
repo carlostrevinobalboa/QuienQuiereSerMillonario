@@ -1,0 +1,154 @@
+{
+  "preguntas": [
+    {
+      "texto": "¿Quién es el protagonista de la película \"El Padrino\"?",
+      "respuestas": [
+        {"texto": "Vito Corleone", "correcta": true, "numero": 1},
+        {"texto": "Michael Corleone", "correcta": false, "numero": 2},
+        {"texto": "Sonny Corleone", "correcta": false, "numero": 3},
+        {"texto": "Fredo Corleone", "correcta": false, "numero": 4}
+      ],
+      "resultado": null
+    },
+    {
+      "texto": "¿En qué país se encuentra la Torre Eiffel?",
+      "respuestas": [
+          {"texto": "Francia", "correcta": true, "numero": 1},
+          {"texto": "Alemania", "correcta": false, "numero": 2},
+          {"texto": "Italia", "correcta": false, "numero": 3},
+          {"texto": "España", "correcta": false, "numero": 4}
+      ],
+      "resultado": null
+    },
+    {
+      "texto": "¿Qué letra sigue a la \"B\" en el alfabeto?",
+      "respuestas": [
+        {"texto": "D", "correcta": false, "numero": 1},
+        {"texto": "C", "correcta": true, "numero": 2},
+        {"texto": "E", "correcta": false, "numero": 3},
+        {"texto": "F", "correcta": false, "numero": 4}
+      ],
+      "resultado": null
+    },
+    {
+      "texto": "¿En qué año se lanzó el primer iPhone de Apple?",
+      "respuestas": [
+        {"texto": "2005", "correcta": false, "numero": 1},
+        {"texto": "2009", "correcta": false, "numero": 2},
+        {"texto": "2007", "correcta": true, "numero": 3},
+        {"texto": "2011", "correcta": false, "numero": 4}
+      ],
+      "resultado": null
+    },
+    {
+      "texto": "¿Cuál es el océano más grande del mundo?",
+      "respuestas": [
+        {"texto": "Atlántico", "correcta": false, "numero": 1},
+        {"texto": "Índico", "correcta": false, "numero": 2},
+        {"texto": "Ártico", "correcta": false, "numero": 3},
+        {"texto": "Pacífico", "correcta": true, "numero": 4}
+      ],
+      "resultado": null
+    },
+    {
+      "texto": "¿Quién escribió \"La Odisea\"?",
+      "respuestas": [
+        {"texto": "Homero", "correcta": true, "numero": 1},
+        {"texto": "Virgilio", "correcta": false, "numero": 2},
+        {"texto": "Ovidio", "correcta": false, "numero": 3},
+        {"texto": "Horacio", "correcta": false, "numero": 4}
+      ],
+      "resultado": null
+    },
+    {
+      "texto": "¿Cuál es el símbolo químico del agua?",
+      "respuestas": [
+        {"texto": "Au", "correcta": false, "numero": 1},
+        {"texto": "Ag", "correcta": false, "numero": 2},
+        {"texto": "H2O", "correcta": true, "numero": 3},
+        {"texto": "Co2", "correcta": false, "numero": 4}
+      ],
+      "resultado": null
+    },
+    {
+      "texto": "¿En qué ciudad se encuentra el famoso Carnaval de Río?",
+      "respuestas": [
+        {"texto": "Río de Janeiro", "correcta": true, "numero": 1},
+        {"texto": "Buenos Aires", "correcta": false, "numero": 2},
+        {"texto": "Lima", "correcta": false, "numero": 3},
+        {"texto": "Santiago", "correcta": false, "numero": 4}
+      ],
+      "resultado": null
+    },
+    {
+      "texto": "¿Quién fue el primer hombre en pisar la Luna?",
+      "respuestas": [
+        {"texto": "Buzz Aldrin", "correcta": false, "numero": 1},
+        {"texto": "Yuri Gagarin", "correcta": false, "numero": 2},
+        {"texto": "Neil Armstrong", "correcta": true, "numero": 3},
+        {"texto": "Alan Shepard", "correcta": false, "numero": 4}
+      ],
+      "resultado": null
+    },
+    {
+      "texto": "¿Cuál es la capital de Australia?",
+      "respuestas": [
+        {"texto": "Sidney", "correcta": false, "numero": 1},
+        {"texto": "Melbourne", "correcta": false, "numero": 2},
+        {"texto": "Brisbane", "correcta": false, "numero": 3},
+        {"texto": "Canberra", "correcta": true, "numero": 4}
+      ],
+      "resultado": null
+    },
+    {
+      "texto": "¿Quién pintó \"La Mona Lisa\"?",
+      "respuestas": [
+        {"texto": "Pablo Picasso", "correcta": false, "numero": 1},
+        {"texto": "Leonardo da Vinci", "correcta": true, "numero": 2},
+        {"texto": "Vincent Van Gogh", "correcta": false, "numero": 3},
+        {"texto": "Salvador Dalí", "correcta": false, "numero": 4}
+      ],
+      "resultado": null
+    },
+    {
+      "texto": "¿Cuál es el país más poblado del mundo?",
+      "respuestas": [
+        {"texto": "Estados Unidos", "correcta": false, "numero": 1},
+        {"texto": "India", "correcta": false, "numero": 2},
+        {"texto": "China", "correcta": true, "numero": 3},
+        {"texto": "Rusia", "correcta": false, "numero": 4}
+      ],
+      "resultado": null
+    },
+    {
+      "texto": "¿Cuál es el segundo país más poblado del mundo?",
+      "respuestas": [
+        {"texto": "India", "correcta": true, "numero": 1},
+        {"texto": "Rusia", "correcta": false, "numero": 2},
+        {"texto": "Estados Unidos", "correcta": false, "numero": 3},
+        {"texto": "Indonesia", "correcta": false, "numero": 4}
+      ],
+      "resultado": null
+    },
+    {
+      "texto": "¿Cuál es el río más largo del mundo?",
+      "respuestas": [
+        {"texto": "Amazonas", "correcta": true, "numero": 1},
+        {"texto":"Nilo", "correcta": false, "numero": 2},
+        {"texto": "Yangtze", "correcta": false, "numero": 3},
+        {"texto": "Misisipi", "correcta": false, "numero": 4}
+      ],
+      "resultado": null
+    },
+    {
+      "texto": "¿Quién fue el primer presidente de Estados Unidos?",
+      "respuestas": [
+        {"texto": "Thomas Jefferson", "correcta": false, "numero": 1},
+        {"texto": "Abraham Lincoln", "correcta": false, "numero": 2},
+        {"texto": "George Washington", "correcta": true, "numero": 3},
+        {"texto": "John F. Kennedy", "correcta": false, "numero": 4}
+      ],
+      "resultado": null
+    }
+  ]
+}
