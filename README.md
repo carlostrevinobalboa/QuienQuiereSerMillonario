@@ -1,5 +1,5 @@
 # QuienQuiereSerMillonario
-Aplicación solo FrontEnd desarrollada con React.js basada en el programa Quien quiere ser millonario.
+Aplicación solo FrontEnd desarrollada con React.js y Tailwind basada en el programa Quien quiere ser millonario.
 <br>
 
 FUNCIONALIDADES:<br>
