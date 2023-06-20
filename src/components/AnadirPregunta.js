@@ -147,8 +147,7 @@ function AnadirPregunta() {
   }
   
   return (
-    <div className="w-screen h-screen bg-cover bg-no-repeat flex flex-col align-middle justify-center"
-    style={{ backgroundImage: "url('https://s1.ppllstatics.com/lasprovincias/www/multimedia/201912/07/media/cortadas/carlos-sobera-kHSD-U90899736077zr-1248x770@Las%20Provincias.jpg')" }}>
+    <div className="w-screen h-screen flex flex-col align-middle justify-center bg-gradient-radial from-slate-300 to-purple-900">
 
       {
         pestanha === 0
@@ -156,7 +155,7 @@ function AnadirPregunta() {
         <div className='flex flex-col  align-middle justify-center items-center p-2'>
           {
             myData.preguntas && 
-            <p className='bg-black text-white'>Número de preguntas: {myData.preguntas.length}</p>
+            <p className='bg-purple-500 mb-2 p-2 text-white'>Número de preguntas: {myData.preguntas.length}</p>
           }
           
 
