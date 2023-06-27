@@ -31,7 +31,7 @@ function App() {
 
 
   return(
-    <div className="w-screen h-screen flex align-middle justify-center items-center bg-gradient-radial from-slate-300 to-purple-900">
+    <div className="w-screen h-screen flex align-middle justify-center items-center bg-yellow-100">
       
       {pestanha === 0 && (
         <div>
